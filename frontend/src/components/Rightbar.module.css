@@ -1,0 +1,53 @@
+.bbot {
+  border-bottom: 1px solid #ddd;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-left: 1px solid #ddd;
+  position: relative;
+  color: #444;
+}
+
+.btn {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-size: 1.2rem 1.2rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  border-radius: 50%;
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+
+.keep {
+  background-image: url(https://www.gstatic.com/companion/icon_assets/keep_2020q4v3_2x.png);
+}
+
+.tasks {
+  background-image: url(https://www.gstatic.com/companion/icon_assets/tasks_2021_2x.png);
+}
+
+.contacts {
+  background-image: url(https://www.gstatic.com/companion/icon_assets/contacts_2022_2x.png);
+}
+
+.maps {
+  background-image: url(https://www.gstatic.com/companion/icon_assets/maps_v2_2x.png);
+}
+
+.toggle {
+  position: absolute;
+  bottom: 0;
+}

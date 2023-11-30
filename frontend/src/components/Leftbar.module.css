@@ -1,0 +1,57 @@
+.container {
+  width: 256px;
+  height: calc(100vh - 70px);
+  margin: 0.5rem;
+  color: #444;
+}
+
+.create {
+  display: flex;
+  padding: 0.4rem 0.8rem;
+  box-shadow: 0px 1px 2px 0px rgba(60,64,67,0.3),0px 1px 3px 1px rgba(60,64,67,0.15);
+  border-radius: 3rem;
+  width: fit-content;
+  align-items: center;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.create div {
+  display: flex;
+  align-items: center;
+}
+
+.create span {
+  margin: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.create > svg {
+  margin-top: 0.2rem;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.create ul {
+  font-size: 0.9rem;
+  line-height: 0.8rem;
+  position: absolute;
+  top: 80%;
+  left: 0.5rem;
+  list-style-type: none;
+  padding-left: 0;
+  width: max-content;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  display: none;
+}
+
+.create li {
+  padding: 0.6rem 0.8rem;
+}
+
+.create li:hover {
+  background-color: #eee;
+}
