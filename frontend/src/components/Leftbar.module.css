@@ -1,8 +1,9 @@
 .container {
   width: 256px;
-  height: calc(100vh - 70px);
+  height: calc(100vh - 85px);
   margin: 0.5rem;
   color: #444;
+  position: relative;
 }
 
 .create {
@@ -54,4 +55,56 @@
 
 .create li:hover {
   background-color: #eee;
+}
+
+.wrapper {
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+.search {
+  box-sizing: border-box;
+  margin: 1rem 0 0 0.5rem;
+  padding: 0 0.5rem;
+  background-color: #f1f3f4;
+  width: calc(100% - 1rem);
+  border-radius: 0.2rem;
+}
+.search input {
+  box-sizing: border-box;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+  width: calc(100% - 0.5rem);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.option {
+  margin-right: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.option:hover {
+  cursor: pointer;
+  background-color: #f1f2f3;
+}
+
+.option span span {
+  margin-left: 0.5rem;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin-left: 1.5rem;
+  font-size: 0.8rem;
+}
+.footer a {
+  text-decoration: none;
+  color: #444;
 }

@@ -1,0 +1,54 @@
+.container {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.GMT {
+  width: 60px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: end;
+  color: #555;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+.GMT::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 20px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.days {
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+  margin-right: 1rem;
+}
+.day-date {
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  width: fit-content;
+}
+
+.day-date .date {
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.day-date .day {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #1a73e8;
+}

@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
         <div className={`${styled.date} ${styled['mid-items']}`}>
           <button className={styled.btn}>Today</button>
-          <button className={styled['sm-btn']}><FaAngleLeft className={styled['mid-items']} /></button>
+          <button className={styled['sm-btn']}><FaAngleLeft className={styled['mid-items']} /></button> 
           <button className={styled['sm-btn']}><FaAngleRight className={styled['mid-items']} /></button>
           <span className={styled['cursor-default']}>November 30, 2023</span>
         </div>

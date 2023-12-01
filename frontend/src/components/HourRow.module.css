@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+}
+.box {
+  flex: 1;
+  padding: 0 1rem;
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+  margin-right: 0.5rem;
+}
+
+.hour {
+  width: 59px;
+  border-right: 1px solid #ccc;
+  position: relative;
+  padding: 1rem 0;
+}
+.hour span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 0.6rem;
+  
+
+}
+.hour::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 20px;
+  border-bottom: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}

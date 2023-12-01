@@ -87,6 +87,7 @@
   background-color: #fff;
   font-size: 1.2rem;
   color: #444;
+  border-radius: 50%;
 }
 .date span {
   font-size: 1.3rem;
@@ -158,25 +159,30 @@
 }
 .switch div:first-child {
   border-radius: 0.5rem 0 0 0.5rem;
+  border-right: 1px solid #ccc;
 }
 .switch div:last-child {
   border-radius: 0 0.5rem 0.5rem 0;
-}
-.switch div:first-child {
-  border-right: 1px solid #ccc;
 }
 .switch button {
   padding: 0.6rem 1rem;
   border: none;
   background-color: #fff;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+.switch div:hover {
+  background-color: #eee;
+}
+.switch button:hover {
+  background-color: #eee;
 }
 .active {
-  background-color: #e3eefc;
+  background-color: #e3eefc !important;
 }
 .active button {
-  color: #1a73e8;
-  background-color: #e3eefc;
+  color: #1a73e8 !important;
+  background-color: #e3eefc !important;
 }
 
 .avt {
