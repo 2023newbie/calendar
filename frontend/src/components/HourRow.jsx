@@ -7,7 +7,9 @@ const HourRow = ({hour}) => {
       <div className={styled.hour}>
         <span>{hour}</span>
       </div>
-      <div className={styled.box}/>
+      <div className={styled.box}>
+        
+      </div>
     </div>
   )
 }

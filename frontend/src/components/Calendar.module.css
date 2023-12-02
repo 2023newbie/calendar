@@ -53,13 +53,13 @@
 }
 
 .active-today {
-  color: #fff;
-  background-color: #1a73e8;
+  color: #fff !important;
+  background-color: #1a73e8 !important;
   border-radius: 50%;
 }
 .active-today:hover {
-  color: #fff;
-  background-color: #07499f;
+  color: #fff !important;
+  background-color: #07499f !important;
 }
 .active-pick {
   color: #0c4e93;
@@ -74,4 +74,20 @@
 
 .blur {
   color: #777;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7, auto);
+  font-size: 0.7rem;
+}
+
+.dates div {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 500;
 }

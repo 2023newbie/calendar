@@ -42,13 +42,18 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  font-weight: 500;
+}
+.date.point {
   background-color: #1a73e8;
   color: #fff;
 }
-
 .day-date .day {
   text-align: center;
   font-size: 0.8rem;
   font-weight: 500;
+  color: #777;
+}
+.day.point {
   color: #1a73e8;
 }

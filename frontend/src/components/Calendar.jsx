@@ -1,89 +1,88 @@
+import { useState } from 'react'
+import { generateDate, months } from '../util/calendar'
 import styled from './Calendar.module.css'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import dayjs from 'dayjs'
+import { useSelector, useDispatch } from 'react-redux'
+import { pickDay } from '../store/pointDay'
 
 const Calendar = () => {
+  const days = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+  const currentDate = dayjs()
+  const pointDay = dayjs(useSelector(state => state.pointDay))
+  
+  const dispatch = useDispatch()
+  
+  const [pickMonth, setPickMonth] = useState([
+    currentDate.month(),
+    currentDate.year(),
+  ]) 
+
+  const increaseMonth = () => {
+    if (pickMonth[0] < 11) {
+      setPickMonth(prevState => {
+        const month = prevState[0] + 1
+        return [month, prevState[1]]
+      })
+    } else {
+      setPickMonth(prevState => {
+        const year = prevState[1] + 1
+        return [0, year]
+      })
+    }
+  }
+
+  const decreaseMonth = () => {
+    if (pickMonth[0] > 0) {
+      setPickMonth(prevState => {
+        const month = prevState[0] - 1
+        return [month, prevState[1]]
+      })
+    } else {
+      setPickMonth(prevState => {
+        const year = prevState[1] - 1
+        return [11, year]
+      })
+    }
+  }
+
   return (
     <div className={styled.container}>
       <div className={`${styled.row1} ${styled.head}`}>
-        <span>December 2023</span>
+        <span>
+          {months[pickMonth[0]]}, {pickMonth[1]}
+        </span>
         <span className={styled.navigate}>
-          <span className={styled['hover-effect']}>
+          <span className={styled['hover-effect']} onClick={decreaseMonth}>
             <FaChevronLeft />
           </span>
-          <span className={styled['hover-effect']}>
+          <span className={styled['hover-effect']} onClick={increaseMonth}>
             <FaChevronRight />
           </span>
         </span>
       </div>
 
-      <div className={`${styled.row} ${styled.day}`}>
-        <span>S</span>
-        <span>M</span>
-        <span>T</span>
-        <span>W</span>
-        <span>T</span>
-        <span>F</span>
-        <span>S</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>26</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>27</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>28</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>29</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>30</span>
-        <span className={`${styled['hover-effect']} ${styled['active-today']}`}>1</span>
-        <span className={styled['hover-effect']}>2</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={styled['hover-effect']}>3</span>
-        <span className={styled['hover-effect']}>4</span>
-        <span className={styled['hover-effect']}>5</span>
-        <span className={styled['hover-effect']}>6</span>
-        <span className={styled['hover-effect']}>7</span>
-        <span className={`${styled['hover-effect']} ${styled['active-pick']}`}>8</span>
-        <span className={styled['hover-effect']}>9</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={styled['hover-effect']}>10</span>
-        <span className={styled['hover-effect']}>11</span>
-        <span className={styled['hover-effect']}>12</span>
-        <span className={styled['hover-effect']}>13</span>
-        <span className={styled['hover-effect']}>14</span>
-        <span className={styled['hover-effect']}>15</span>
-        <span className={styled['hover-effect']}>16</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={styled['hover-effect']}>17</span>
-        <span className={styled['hover-effect']}>18</span>
-        <span className={styled['hover-effect']}>19</span>
-        <span className={styled['hover-effect']}>20</span>
-        <span className={styled['hover-effect']}>21</span>
-        <span className={styled['hover-effect']}>22</span>
-        <span className={styled['hover-effect']}>23</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={styled['hover-effect']}>24</span>
-        <span className={styled['hover-effect']}>25</span>
-        <span className={styled['hover-effect']}>26</span>
-        <span className={styled['hover-effect']}>27</span>
-        <span className={styled['hover-effect']}>28</span>
-        <span className={styled['hover-effect']}>29</span>
-        <span className={styled['hover-effect']}>30</span>
-      </div>
-
-      <div className={styled.row}>
-        <span className={styled['hover-effect']}>31</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>1</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>2</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>3</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>4</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>5</span>
-        <span className={`${styled['hover-effect']} ${styled.blur}`}>6</span>
+      <div className={styled.dates}>
+        {days.map((day, index) => (
+          <div key={index}>{day}</div>
+        ))}
+        {generateDate(pickMonth[0], pickMonth[1]).map(
+          ({ date, currentMonth, today }, index) => (
+            <div
+              className={`${styled.date} ${styled['hover-effect']} ${
+                pointDay.$d.toString() === date.$d.toString()
+                  ? styled['active-pick']
+                  : ''
+              } ${today ? styled['active-today'] : ''} ${
+                currentMonth ? '' : styled.blur
+              }`}
+              key={index}
+              onClick={() => dispatch(pickDay(date.toDate().toString()))}
+            >
+              <div>{date.date()}</div>
+            </div>
+          )
+        )}
       </div>
     </div>
   )

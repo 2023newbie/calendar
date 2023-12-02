@@ -1,4 +1,5 @@
 # Calendar App - Your Personal Event Organizer
+(the application is currently in the development stage)
 
 Welcome to the Calendar App, your go-to solution for seamless calendar management and event organization. This application is designed to simplify your life by providing essential features for viewing your schedule, creating events, and effortlessly tracking your agenda.
 

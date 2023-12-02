@@ -3,8 +3,12 @@ import styled from './HoursInDay.module.css'
 import HourRow from './HourRow'
 
 const HoursInDay = () => {
+  const addTask = e => {
+    console.log(e.target);
+  }
+
   return (
-    <div className={styled.container}>
+    <div className={styled.container} onClick={addTask}>
       <HourRow hour='1 AM' />
       <HourRow hour='2 AM' />
       <HourRow hour='3 AM' />
