@@ -17,4 +17,5 @@ code {
 .main-container {
   display: flex;
   max-height: calc(100vh - 80px);
+  position: relative;
 }
