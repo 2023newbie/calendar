@@ -2,9 +2,17 @@ import { useState } from 'react'
 import Calendar from './Calendar'
 import styled from './Leftbar.module.css'
 import { FaCaretDown, FaChevronDown, FaPlus } from 'react-icons/fa'
+import { useDispatch } from 'react-redux'
+import { open } from '../store/modal'
 
 const Leftbar = () => {
   const [isShow, setIsShow] = useState(false)
+  const dispatch = useDispatch()
+
+  const openModal = () => {
+    setIsShow(false)
+    dispatch(open())
+  }
 
   return (
     <div className={styled.container}>
@@ -23,7 +31,7 @@ const Leftbar = () => {
           <FaCaretDown />
         </div>
         <ul className={isShow ? '' : styled.none}>
-          <li>Event</li>
+          <li onClick={openModal}>Event</li>
           <li>Task</li>
           <li>Appointment schedule</li>
         </ul>

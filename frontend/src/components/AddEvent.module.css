@@ -1,18 +1,61 @@
+.btn {
+  border: none;
+  background-color: #fff;
+  padding: 0.7rem 0.5rem;
+  cursor: pointer;
+  border-radius: 0.3rem;
+  margin: 0 0.3rem;
+}
+.gray {
+  color: #555;
+}
+.gray:hover {
+  background-color: #f1f3f4;
+}
+.blue {
+  color: #3887f5;
+}
+.bcBlue {
+  background-color: #e8f0fe;
+}
+.blue:hover {
+  background-color: #e1f0f8;
+}
+.bold {
+  font-weight: 600;
+}
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+.ml-1 {
+  margin-left: -0.5rem;
+}
+.ml-2 {
+  margin-left: -1rem;
+}
+/* --------------------------------- */
+
 .container {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   position: fixed;
+  z-index: 2;
 }
 
 .card {
   background-color: #fff;
   box-shadow: 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12), 0 11px 15px -7px rgba(0,0,0,.2);
   position: absolute;
-  z-index: 2;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 0.5rem;
+  width: 450px;
+  font-size: 0.9rem;
 }
 
 .closeBar {
@@ -41,12 +84,68 @@
 .row {
   display: flex;
   align-items: center;
+  margin-bottom: 0.7rem;
 }
 
 .icon {
   box-sizing: border-box;
   width: 50px;
-  padding: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.main {
+  padding: 0.7rem;
+}
+
+.info {
+  flex: 1;
+}
+.title {
+  font-size: 1.4rem;
+}
+
+.date-time {
+  margin-left: -0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.date-time .hour span:nth-child(2) {
+  padding: 0 1rem;
+}
+.date-time .other {
+  line-height: 1rem;
+  color: #888;
+}
+
+.guestInput {
+  background-color: transparent;
+  padding: 0.5rem;
+  border-bottom: 1px solid #fff;
+}
+.guestInput:focus {
+  border-bottom: 1px solid #ccc;
+  background-color: #f1f3f4;
+}
+
+.footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: end;
+}
+
+.save {
+  color: #fff;
+  font-weight: 700;
+  background-color: #3887f5;
+  padding: 0 1.5rem;
+}
+.save:hover {
+  background-color: #2276ec;
+}
+
+.options:hover {
+  background-color: #f1f3f4;
 }
